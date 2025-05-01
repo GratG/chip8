@@ -7,6 +7,7 @@ class Chip8{
         Chip8();
         ~Chip8();
 
+        void init();
         bool loadRom(std::string s); //loads the rom file to memory
         void cycle(); //performs a single cpu step
 
