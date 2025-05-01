@@ -12,7 +12,7 @@ SDL_Renderer *renderer;
 SDL_Texture *texture;
 
 void createWindow(){
-
+    SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer("Chip8", WINDOW_WIDTH, WINDOW_HEIGHT, 0, &window, &renderer);
 
     SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STREAMING,

@@ -20,10 +20,14 @@ class Chip8{
         uint16_t pc; //program counter
         uint16_t stack[16];
         uint16_t sp; //stack pointer
-        void execute(uint16_t op);
+        int execute(uint16_t op);
         //RAM
         uint8_t memory[4096]; //4kb of mem
 
         //display of 64 height by 32 width pixels
-        int display[64*32]; 
+        int display[64*32];
+        bool drawFlag;
+
+        //clear display
+        void clearScreen();
 };
