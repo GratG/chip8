@@ -210,7 +210,7 @@ int Chip8::execute(uint16_t op){
             return 2;
         case 0x7000:    
             //0x7XKK ADD value KK to V[X]
-            V[(op & 0x0F00) >> 8] += 0x00FF;
+            V[(op & 0x0F00) >> 8] += op & 0x00FF;
             return 2;
         case 0x8000:
             switch(op & 0x000F){
@@ -303,6 +303,9 @@ int Chip8::execute(uint16_t op){
             uint16_t x = V[(op & 0x0F00) >> 8];
             uint16_t y = V[(op & 0x00F0) >> 4];
             uint16_t height = op & 0x000F;
+
+    
+
             uint16_t pixel;
 
             V[0xF] = 0;

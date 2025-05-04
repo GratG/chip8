@@ -8,23 +8,12 @@
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 320
 
-uint8_t keymap[16] = {
-    SDLK_X,
-    SDLK_1,
-    SDLK_2,
-    SDLK_3,
-    SDLK_Q,
-    SDLK_W,
-    SDLK_E,
-    SDLK_A,
-    SDLK_S,
-    SDLK_D,
-    SDLK_Z,
-    SDLK_C,
-    SDLK_4,
-    SDLK_R,
-    SDLK_F,
-    SDLK_V,
+SDL_Scancode keymap[16] = {
+    SDL_SCANCODE_1, SDL_SCANCODE_2, SDL_SCANCODE_3, SDL_SCANCODE_4,
+    SDL_SCANCODE_Q, SDL_SCANCODE_W, SDL_SCANCODE_E, SDL_SCANCODE_R,
+    SDL_SCANCODE_A, SDL_SCANCODE_S, SDL_SCANCODE_D, SDL_SCANCODE_F,
+    SDL_SCANCODE_Z, SDL_SCANCODE_X, SDL_SCANCODE_C, SDL_SCANCODE_V
+
 };
 
 SDL_Window *window;
@@ -107,20 +96,20 @@ int main(int argc, char **argv){
             }
             if(e.type == SDL_EVENT_KEY_UP){
                 for(int i =0; i <16; i++){
-                    if(e.key.scancode == keymap[i]){
+                    if(e.key.scancode == keymap[i]){     
                         chip8.key[i] = 0;
                     }
                 }
             }
         }
-
+        
         //render graphics
         if(chip8.getDrawFlag()){
             chip8.setDrawFlag(false);
             drawDisplay(chip8);
         }
         
-        SDL_Delay(10);
+        SDL_Delay(1);
     }
 
     return 0;
