@@ -6,11 +6,16 @@ class Chip8{
     public:
         Chip8();
         ~Chip8();
-
         void init();
-        bool loadRom(std::string s); //loads the rom file to memory
+        bool loadRom(const char *filePath); //loads the rom file to memory
         void cycle(); //performs a single cpu step
 
+        void setDrawFlag(bool b);
+        bool getDrawFlag();
+        int getDisplay(int i);
+
+        //keypad to store current state of key from 0x0-0xF
+        uint8_t key[16];
 
     private:
         //CPU
@@ -27,7 +32,9 @@ class Chip8{
         //display of 64 height by 32 width pixels
         int display[64*32];
         bool drawFlag;
-
+        //timers
+        int delayTimer;
+        int soundTimer;
         //clear display
         void clearScreen();
 };
