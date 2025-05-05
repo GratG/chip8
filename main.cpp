@@ -27,7 +27,7 @@ void createWindow(){
     
     //SDL_SetRenderLogicalPresentation(renderer, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_LOGICAL_PRESENTATION_INTEGER_SCALE);
 
-    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_STREAMING,
+    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING,
         64, 32);
     SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
 
@@ -44,7 +44,7 @@ void drawDisplay(Chip8 c){
         if(c.getDisplay(i) == 0){
             pixels[i] = 0xFF000000;
         } else{
-            pixels[i] = 0x00FFFFFF;
+            pixels[i] = 0xFF00FF00;
         }
         
     }

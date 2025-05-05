@@ -59,6 +59,21 @@ void Chip8::init(){
     index = 0;
     sp = 0;
 
+    clearScreen();
+    // reset memory, stack, key inputs and V registers
+    for(auto i : memory){
+        i = 0;
+    }
+    for(auto i : stack){
+        i = 0;
+    }
+    for(auto i : key){
+        i = 0;
+    }
+    for(auto i : V){
+        i = 0;
+    }
+
     //set timers
     delayTimer = 0;
     soundTimer = 0;
@@ -71,63 +86,22 @@ void Chip8::init(){
 bool Chip8::loadRom(const char *filePath){
 
     init();
-    //std::cout << "loading rom..." << std::endl;
-    //std::ifstream ifs;
-    //ifs.open(s, std::ios::binary);
-    //char c;
-    ////start at position 0x200 onwards
-    //int j = 0x200;
-    //for(int i = 0x200; ifs.get(c); i++){
-    //    if(j >= 4096){
-    //        return false;
-    //    }
-    //    memory[i] = (uint8_t)c;
-    //    j++;
-    //}
-    //std::cout << "loading completed..." << std::endl;
-    //return true;
-    
-
-
-    // Open ROM file
-    FILE* rom = fopen(filePath, "rb");
-
-
-    // Get file size
-    fseek(rom, 0, SEEK_END);
-    long rom_size = ftell(rom);
-    rewind(rom);
-
-    // Allocate memory to store rom
-    char* rom_buffer = (char*) malloc(sizeof(char) * rom_size);
-    if (rom_buffer == NULL) {
-        std::cerr << "Failed to allocate memory for ROM" << std::endl;
-        return false;
-    }
-
-    // Copy ROM into buffer
-    size_t result = fread(rom_buffer, sizeof(char), (size_t)rom_size, rom);
-    if (result != rom_size) {
-        std::cerr << "Failed to read ROM" << std::endl;
-        return false;
-    }
-
-    // Copy buffer to memory
-    if ((4096-512) > rom_size){
-        for (int i = 0; i < rom_size; ++i) {
-            memory[i + 512] = (uint8_t)rom_buffer[i];   // Load into memory starting
-                                                        // at 0x200 (=512)
+    std::cout << "loading rom..." << std::endl;
+    std::ifstream ifs;
+    ifs.open(filePath, std::ios::binary);
+    char c;
+    //start at position 0x200 onwards
+    int j = 0x200;
+    for(int i = 0x200; ifs.get(c); i++){
+        if(j >= 4096){
+            return false;
         }
+        memory[i] = (uint8_t)c;
+        j++;
     }
-    else {
-        std::cerr << "ROM too large to fit in memory" << std::endl;
-        return false;
-    }
-
-    // Clean up
-    fclose(rom);
-    free(rom_buffer);
-
+    std::cout << "loading completed..." << std::endl;
+    return true;
+    
     return true;
 }
 
@@ -331,14 +305,14 @@ int Chip8::execute(uint16_t op){
         switch(op & 0x00FF){
             case 0x009E:
                 //0xEX9E skip instr if key with value V[x] is pressed
-                if(key[V[op & 0x0F00] >> 8] !=0)
+                if(key[V[(op & 0x0F00)>> 8] ] !=0)
                     return 4;
                 else
                     return 2;
                 break;
             case 0x00A1:
                 //0xEXA1 skip instr if key wasn't pressed
-                if(key[V[op & 0x0F00] >> 8] ==0){
+                if(key[V[(op & 0x0F00)>> 8] ] ==0){
                     return 4;
                 } else {
                     return 2;
@@ -359,7 +333,7 @@ int Chip8::execute(uint16_t op){
 
                 for(int i = 0; i < 16; i++){
                     if(key[i] != 0){
-                        V[(op & 0x0F00) >> 8] = 1;
+                        V[(op & 0x0F00) >> 8] = i;
                         keyPressed = true;
                     }
                 }
