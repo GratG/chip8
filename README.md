@@ -3,11 +3,16 @@ A chip8 emulator written in C++ using SDL for graphics and input
  
 
 ## Building: 
-    cmake is required to build this project
-clone using `git clone`
-cd into directory
+Clone using `git clone` then cd into directory
 ```
 $ mkdir build
 $ cmake ..
 $ make
+```
+## Running: 
+After building the progect, you can run a .ch8 ROM but typing ./chip8 ../roms/*.ch8
+
+example: 
+```
+./chip8 ../roms/Space.ch8
 ```
