@@ -19,17 +19,17 @@ example:
 
 ## Screenshots:
 ### Space Invaders:
-Controls:<br />
+Controls:
     W - START/SHOOT<br />
-    Q - LEFT<br /> 
-    E - RIGHT<br /> 
+    Q - LEFT
+    E - RIGHT
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Space-Invaders.png)
 ### Pong
 Controls:  
-    Left player: 2 - UP Q - DOWN\
+    Left player: 2 - UP Q - DOWN
     Right player: Z - UP X - DOWN 
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Pong.png)
-### [Timendus test suite:"](https://github.com/Timendus/chip8-test-suite) chip8 Logo
+### [Timendus test suite:](https://github.com/Timendus/chip8-test-suite) chip8 Logo
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Timendus.png)
-### [Timendus test suite:"](https://github.com/Timendus/chip8-test-suite) corax+
+### [Timendus test suite:](https://github.com/Timendus/chip8-test-suite) corax+
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Corax.png)
