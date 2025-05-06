@@ -44,7 +44,7 @@ void drawDisplay(Chip8 c){
         if(c.getDisplay(i) == 0){
             pixels[i] = 0xFF000000;
         } else{
-            pixels[i] = 0xFF00FF00;
+            pixels[i] = 0xFFFFFFFF;
         }
         
     }
