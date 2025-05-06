@@ -16,18 +16,26 @@ example:
 ```
 ./chip8 ../roms/Space.ch8
 ```
+## Controls: 
+The controls of the chip8 interpreter are setup in a 4x4 grid from 0-F, to adapt this to keyboard controls I am using the left 4 rows of the keyboard.
+
+|---|---|---|---|
+| 1 | 2 | 3 | C |
+| 4 | 5 | 6 | D |
+| 7 | 8 | 9 | E |
+| A | 0 | B | F |
 
 ## Screenshots:
 ### Space Invaders:
-Controls:
+Controls:<br />
     W - START/SHOOT<br />
-    Q - LEFT
-    E - RIGHT
+    Q - LEFT<br />
+    E - RIGHT<br />
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Space-Invaders.png)
-### Pong
-Controls:  
-    Left player: 2 - UP Q - DOWN
-    Right player: Z - UP X - DOWN 
+### Pong:
+Controls:<br />  
+    Left player: 2 - UP Q - DOWN<br />
+    Right player: Z - UP X - DOWN<br /> 
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Pong.png)
 ### [Timendus test suite:](https://github.com/Timendus/chip8-test-suite) chip8 Logo
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Timendus.png)
