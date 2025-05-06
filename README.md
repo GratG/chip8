@@ -19,9 +19,9 @@ example:
 
 ## Screenshots:
 ### Space Invaders:
-Controls:  <br>
-    W - START/SHOOT  <br>
-    Q - LEFT  <br>
+Controls:  <br />
+    W - START/SHOOT  <br />
+    Q - LEFT  <br />
     E - RIGHT 
 ![alt text](https://github.com/GratG/chip8/blob/main/screenshots/Space-Invaders.png)
 ### Pong
