@@ -16,3 +16,13 @@ example:
 ```
 ./chip8 ../roms/Space.ch8
 ```
+
+## Screenshots:
+### Space Invaders:
+![alt text](https://github.com/GratG/chip8/blob/main/Screenshots/Space-Invaders.png)
+### Pong
+![alt text](https://github.com/GratG/chip8/blob/main/Screenshots/Pong.png)
+### [Timendus test suite](https://github.com/Timendus/chip8-test-suite) chip8 Logo
+![alt text](https://github.com/GratG/chip8/blob/main/Screenshots/Timendus.png)
+### Timendus test suite: corax+
+![alt text](https://github.com/GratG/chip8/blob/main/Screenshots/Corax.png)
