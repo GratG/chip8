@@ -19,6 +19,7 @@ example:
 ## Controls: 
 The controls of the chip8 interpreter are setup in a 4x4 grid from 0-F, to adapt this to keyboard controls I am using the left 4 rows of the keyboard.
 
+|   |   |   |   |
 |---|---|---|---|
 | 1 | 2 | 3 | C |
 | 4 | 5 | 6 | D |
