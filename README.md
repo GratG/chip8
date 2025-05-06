@@ -19,12 +19,12 @@ example:
 ## Controls: 
 The controls of the chip8 interpreter are setup in a 4x4 grid from 0-F, to adapt this to keyboard controls I am using the left 4 rows of the keyboard.
 
-|   |   |   |   |
-|---|---|---|---|
-| 1 | 2 | 3 | C |
-| 4 | 5 | 6 | D |
-| 7 | 8 | 9 | E |
-| A | 0 | B | F |
+|   |   |   |   |       |   |   |   |   |
+|---|---|---|---|       |---|---|---|---|
+| 1 | 2 | 3 | C |       | 1 | 2 | 3 | C |
+| 4 | 5 | 6 | D |   =>  | 4 | 5 | 6 | D |
+| 7 | 8 | 9 | E |       | 7 | 8 | 9 | E |
+| A | 0 | B | F |       | A | 0 | B | F |
 
 ## Screenshots:
 ### Space Invaders:
